@@ -43,9 +43,7 @@ class Main extends Component {
        {/*}<div className="logout"><h3>NEW ROBOT</h3></div>*/}
         </div>
         <div className="content-area">
-<<<<<<< HEAD
           {this.state.value}
-=======
         <div className="box-left">  
         <div className="video-area">Video</div>
         <div className="graph-area">graph</div>
@@ -54,8 +52,6 @@ class Main extends Component {
         <div className="box-right">
         <div className="index-area">index</div>
         </div>
-          
->>>>>>> refs/remotes/origin/master
         </div>
       </div>
     );
