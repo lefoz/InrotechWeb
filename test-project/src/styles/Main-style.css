@@ -14,7 +14,37 @@
 }
 .content-area{
  font-family: sans-serif; 
- width: 100%;
+ width: 66%;
  height: 100vh;
+ display: flex;
  background-color: red;
+}
+.video-area{
+width: 30%;
+height: 50vh;
+margin-right: 2%;
+margin-left: 1%;
+display: inline-flex;
+background-color: purple;
+}
+.graph-area{
+width: 30%;
+height: 50vh;
+margin-right: 2%;
+display: inline-flex;
+background-color: purple;
+}
+.index-area{
+width: 34%;
+height: 100vh;
+float: right;
+background-color: purple;
+}
+.task-area{
+width: 63%;
+height: 40vh;
+margin-right: 2%;
+margin-left: 1%;
+float: left;
+background-color: purple;
 }
