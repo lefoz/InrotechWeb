@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Login from '../Login'
-import SignUp from '../SignUp'
+import Settings from '../Settings'
 import Main from '../Main'
-import AboutUs from '../AboutUs'
+import RobotSelector from '../RobotSelector'
 import NotFound from '../NotFound'
 
 import {
@@ -19,8 +19,8 @@ class Routes extends Component {
                     <Switch>
                         <Route exact path="/" component={Login} />
                         <Route path="/Main" component={Main} />
-                        <Route path="/SignUp" component={SignUp} />
-                        <Route path="/AboutUs" component={AboutUs} />
+                        <Route path="/Settings" component={Settings} />
+                        <Route path="/RobotSelector" component={RobotSelector} />
                         <Route component={NotFound} />
                     </Switch>
                     

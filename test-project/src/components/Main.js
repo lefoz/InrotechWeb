@@ -33,7 +33,7 @@ class Main extends Component {
         <div className="top-menu">
         <div className="logo"><img src={logo} alt="" /></div>
         <div className="robot-info"><p>ROBOT INFO</p></div>
-        <Link to="/SignUp">
+        <Link to="/Settings">
             <input className="settings" type="submit" value="SETTINGS"/> 
         </Link>
          <Link to="/">

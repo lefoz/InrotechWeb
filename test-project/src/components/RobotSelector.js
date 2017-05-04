@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import '../styles/AboutUs-style.css';
+import '../styles/RobotSelector-style.css';
 
-class AboutUs extends Component {
+class RobotSelector extends Component {
   render() {
     return (
          <div className="Main">
@@ -12,4 +12,4 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs;
+export default RobotSelector;
