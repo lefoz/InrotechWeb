@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
 import Request from 'superagent';
-
+import logo from '../images/Inrotechlogo_White_Cyan.png';
 class Main extends Component {
   constructor() {
     super()
@@ -31,10 +31,31 @@ class Main extends Component {
     return (
       <div className="main">
         <div className="top-menu">
-          Top Menu
+        <div className="logo"><img src={logo} alt="" /></div>
+        <div className="robot-info"><p>ROBOT INFO</p></div>
+        <Link to="/SignUp">
+            <input className="settings" type="submit" value="SETTINGS"/> 
+        </Link>
+         <Link to="/">
+            <input className="logout" type="submit" value="NEW ROBOT"/> 
+        </Link>
+        {/*<div className="settings"><h3>SETTINGS</h3></div>*/}
+       {/*}<div className="logout"><h3>NEW ROBOT</h3></div>*/}
         </div>
         <div className="content-area">
+<<<<<<< HEAD
           {this.state.value}
+=======
+        <div className="box-left">  
+        <div className="video-area">Video</div>
+        <div className="graph-area">graph</div>
+        <div className="task-area">taskmanager {this.state.value}</div>
+        </div>
+        <div className="box-right">
+        <div className="index-area">index</div>
+        </div>
+          
+>>>>>>> refs/remotes/origin/master
         </div>
       </div>
     );

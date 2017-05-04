@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Login-style.css';
+import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
 class Login extends Component {
@@ -9,8 +10,7 @@ class Login extends Component {
       <div className="background">
       <div className="wrapper">
         <div className="menuStyle">
-         <h1>INROTECH</h1>
-         <h3>SERVICE AND SUPPORT SITE</h3>
+        <div className="logo-front"><img src={logo} alt="" /></div>
         </div>
         <div>
           <div className="divContent">

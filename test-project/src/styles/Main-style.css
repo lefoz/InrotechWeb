@@ -6,15 +6,96 @@
 }
 .top-menu{
  padding: 0px;
- font-family: sans-serif; 
+ font-family: sans-serif;
+ color: white; 
  width: 100%;
  height: 10%;
- background-color: blue;
+ background-color: black;
  margin: 0 auto;
+ display: inline-flex;
+ padding-bottom: 1%;
+}
+.logo{
+     margin: 0 auto;
+     align-self: left;
+     width: 20%;
+     height: 100%;
+     }
+     .logo img{
+       align-self: left;
+       margin: 0 auto;
+       height:100%; 
+       width: 100%;
+     }
+.robot-info{
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+  align-self: center;  
+}
+.settings{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: black;
+  }
+.logout{
+ margin: 0 auto;
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: black;
+  align-self: right;  
 }
 .content-area{
  font-family: sans-serif; 
  width: 100%;
  height: 100vh;
  background-color: red;
+<<<<<<< HEAD
+=======
+ padding-top: 1%;
+}
+.box-left{
+  width: 62%;
+  height: 100vh;
+  display: inline-block;
+}
+.box-right{
+  width: 38%;
+  height: 100vh;
+  display: inline-block;
+}
+.video-area{
+width: 46%;
+height: 46vh;
+margin-right: 2%;
+margin-left: 2%;
+display: inline-flex;
+background-color: purple;
+}
+.graph-area{
+width: 46%;
+height: 46vh;
+margin-right: 2%;
+display: inline-flex;
+background-color: purple;
+}
+.index-area{
+width: 97%;
+height: 100vh;
+background-color: purple;
+}
+.task-area{
+width: 94%;
+height: 52vh;
+margin-right: 2%;
+margin-left: 2%;
+margin-top: 2%;
+float: left;
+background-color: purple;
+>>>>>>> refs/remotes/origin/master
 }
