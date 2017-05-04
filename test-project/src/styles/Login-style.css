@@ -75,3 +75,9 @@ textarea {
     top:50px;
     
 }
+.robo{
+  width: 250px;
+  height: 400px;
+  background-color: black;
+  text-align: center;
+}

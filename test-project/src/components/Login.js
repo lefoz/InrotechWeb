@@ -4,6 +4,7 @@ import '../styles/Login-style.css';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
+
 class Login extends Component {
   render() {
     return (
@@ -19,10 +20,11 @@ class Login extends Component {
             <Link to="/RobotSelector">
             <input type="submit" value="LOG IN"/> 
             </Link>
-           </div>
-           </div>
+            </div>
+          </div>
         </div>
       </div>
+      
     );
   }
 }
