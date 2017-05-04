@@ -39,8 +39,6 @@ class Main extends Component {
          <Link to="/">
             <input className="logout" type="submit" value="NEW ROBOT"/> 
         </Link>
-        {/*<div className="settings"><h3>SETTINGS</h3></div>*/}
-       {/*}<div className="logout"><h3>NEW ROBOT</h3></div>*/}
         </div>
         <div className="content-area">
         <div className="box-left">  
