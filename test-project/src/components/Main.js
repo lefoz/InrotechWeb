@@ -34,17 +34,8 @@ class Main extends Component {
           Top Menu
         </div>
         <div className="content-area">
-        <div className="box-left">  
-        <div className="video-area">Video</div>
-        <div className="graph-area">graph</div>
-        <div className="task-area">taskmanager</div>
-        </div>
-        <div className="box-right">
-        <div className="index-area">index</div>
-        </div>
           {this.state.value}
         </div>
-        
       </div>
     );
   }
