@@ -18,7 +18,8 @@ class Main extends Component {
     Request.get("/api/values")
     .withCredentials()
     .end((err, res) => {
-      this.setState({ value: res.body.now })
+      console.log('value of request is '+res.body)
+      this.setState({ value: res.body })
     })
     // fetch('api/values').then(result => {
     //   let jsonObject = result.json();
