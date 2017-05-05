@@ -4,6 +4,7 @@ import '../styles/Main-style.css';
 import Request from 'superagent';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 class Main extends Component {
+
   constructor() {
     super()
     this.state = {value:[]}
@@ -15,17 +16,16 @@ class Main extends Component {
   }
 
   getValue() {
-    Request.get("/api/values")
+    //Request.get("/api/values")
+    Request.get("/api/values/5")
     .withCredentials()
     .end((err, res) => {
       this.setState({ value: res.body.now })
+      console.log('request ')
+      console.log(res.body)
     })
-    // fetch('api/values').then(result => {
-    //   let jsonObject = result.json();
-    //   console.log(result)
-    //   
-    // })
   }
+  
   render() {
 
     return (
