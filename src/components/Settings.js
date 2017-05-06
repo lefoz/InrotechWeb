@@ -13,7 +13,7 @@ class Settings extends Component {
         </div>
           <div className="divContent">
             
-            <Link to="/Main">
+            <Link to="main">
             <input type="submit" value="SAVE SETTINGS"/> 
             </Link>
           </div>

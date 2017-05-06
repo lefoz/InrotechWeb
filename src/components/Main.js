@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
 import Request from 'superagent';
+import Video from './Video';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 class Main extends Component {
 
@@ -33,7 +34,7 @@ class Main extends Component {
         <div className="top-menu">
         <div className="logo"><img src={logo} alt="" /></div>
         <div className="robot-info"><p>ROBOT INFO</p></div>
-        <Link to="/Settings">
+        <Link to="settings">
             <input className="settings" type="submit" value="SETTINGS"/> 
         </Link>
          <Link to="/">
@@ -42,7 +43,7 @@ class Main extends Component {
         </div>
         <div className="content-area">
         <div className="box-left">  
-        <div className="video-area">Video</div>
+        <div className="video-area">Video<Video /></div>
         <div className="graph-area">graph</div>
         <div className="task-area">taskmanager {this.state.value}</div>
         </div>

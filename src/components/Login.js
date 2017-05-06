@@ -16,8 +16,8 @@ class Login extends Component {
           <div className="divContent">
             <input className="boxMargins" placeholder="Username"></input><br />
             <input type="password" className="boxMargins" placeholder="Password"></input><br />
-            <Link to="/RobotSelector">
-            <input type="submit" value="LOG IN"/> 
+            <Link to="robotselector">
+              <input type="submit" value="LOG IN"/> 
             </Link>
            </div>
            </div>
