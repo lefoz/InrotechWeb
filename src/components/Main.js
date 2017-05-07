@@ -18,7 +18,7 @@ class Main extends Component {
 
   getValue() {
     //Request.get("/api/values")
-    Request.get("/api/values/5")
+    Request.get("/api/values")
     .withCredentials()
     .end((err, res) => {
       this.setState({ value: res.body.now })
