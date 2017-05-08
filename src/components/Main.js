@@ -18,10 +18,11 @@ class Main extends Component {
 
   getValue() {
     //Request.get("/api/values")
-    Request.get("/api/values")
+    Request.get("/api/values/5")
     .withCredentials()
     .end((err, res) => {
-      this.setState({ value: res.body.now })
+      let _val = res.body;
+      this.setState({value: _val })
       console.log('request ')
       console.log(res.body)
     })
@@ -43,7 +44,7 @@ class Main extends Component {
         </div>
         <div className="content-area">
         <div className="box-left">  
-        <div className="video-area">Video<Video /></div>
+        <div className="video-area">Video{/*<Video />*/}</div>
         <div className="graph-area">graph</div>
         <div className="task-area">taskmanager {this.state.value}</div>
         </div>
