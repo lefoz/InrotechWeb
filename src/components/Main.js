@@ -16,12 +16,13 @@ class Main extends Component {
     this.getValue();
   }
 
+//https://github.com/visionmedia/superagent/issues/270
   getValue() {
     //Request.get("/api/values")
     Request.get("/api/values/5")
     .withCredentials()
     .end((err, res) => {
-      let _val = res.body;
+      let _val = res.text;
       this.setState({value: _val })
       console.log('request ')
       console.log(res.body)
@@ -44,7 +45,7 @@ class Main extends Component {
         </div>
         <div className="content-area">
         <div className="box-left">  
-        <div className="video-area">Video{/*<Video />*/}</div>
+        <div className="video-area">Video<Video /></div>
         <div className="graph-area">graph</div>
         <div className="task-area">taskmanager {this.state.value}</div>
         </div>
