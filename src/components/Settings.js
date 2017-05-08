@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/Settings-style.css';
 
+//https://visionmedia.github.io/superagent/
+
+/*  request.post('/user')
+    .send({ name: 'tj', pet: 'tobi' })
+    .end(callback)*/
+
 class Settings extends Component {
   render() {
     return (

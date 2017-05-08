@@ -16,12 +16,14 @@ class Main extends Component {
     this.getValue();
   }
 
+//https://github.com/visionmedia/superagent/issues/270
   getValue() {
     //Request.get("/api/values")
-    Request.get("/api/values")
+    Request.get("/api/values/5")
     .withCredentials()
     .end((err, res) => {
-      this.setState({ value: res.body.now })
+      let _val = res.text;
+      this.setState({value: _val })
       console.log('request ')
       console.log(res.body)
     })
