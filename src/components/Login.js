@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import Routes_login from './Routing/Routes_login'
+
 import '../styles/Login-style.css';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
 class Login extends Component {
   render() {
+    console.log(this.props.route)
     return (
       <div className="background">
-      <div className="wrapper">
-        <div className="menuStyle">
-        <div className="logo-front"><img src={logo} alt="" /></div>
+        <div className="wrapper">
+          <div className="menuStyle">
+            <div className="logo-front"><img src={logo} alt="" />
+          </div>
         </div>
-        <div>
           <div className="divContent">
-            <input className="boxMargins" placeholder="Username"></input><br />
-            <input type="password" className="boxMargins" placeholder="Password"></input><br />
-            <Link to="robotselector">
-              <input type="submit" value="LOG IN"/> 
-            </Link>
-           </div>
-           </div>
+            <Routes_login /> 
+          </div>
         </div>
       </div>
     );
