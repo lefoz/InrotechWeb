@@ -18,13 +18,11 @@ class Routes extends Component {
                 <div>
                     <Switch>
                         <Route exact path="/" component={Login} />
-                        <Route path="/Main" component={Main} />
-                        <Route path="/Settings" component={Settings} />
-                        <Route path="/RobotSelector" component={RobotSelector} />
+                        <Route path="/main" component={Main} />
+                        <Route path="/settings" component={Settings} />
+                        <Route path="/robotselector" component={RobotSelector} />
                         <Route component={NotFound} />
                     </Switch>
-                    
-                    {this.props.children}
                 </div>
             </Router>
         )
