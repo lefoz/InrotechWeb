@@ -17,8 +17,8 @@ class Graph extends Component {
 
   componentDidMount() {
     this.getValue();
-    window.setInterval(() => this.forceUpdate(), 1500);
-    setInterval(() => this.getValue(), 1500)
+    //window.setInterval(() => this.forceUpdate(), 1500);
+    setInterval(() => this.getValue(), 1000)
     
   }
 
@@ -27,7 +27,7 @@ class Graph extends Component {
     Request.get("/api/values")
     .withCredentials()
     .end((err, res) => {
-      var _val1 = res.body.x
+      //var _val1 = res.body.x
       this.setState({ value: res.body.x 
       })
       console.log('request ')
@@ -37,20 +37,38 @@ class Graph extends Component {
 
 render() {
         var flow = {
-            duration: 100
+            duration: 50,
+           
         };
+        
+        var chart =({
+            transition: {
+            duration: 0}
+      });
+      
+      
         var data = {
+            xFormat: '%S',
             date: new Date(),
-            Car: this.state.value,
+            Car: this.state.value}
+        var axis = {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                          format: '%S'
+                          }
+                    }
         };
 
-        return <RTChart
+        return <section><RTChart
         flow = { flow }
+        maxValues={20}
         fields = {
             ['Car']
         }
+        
         data = { data }
-        />
+        /></section>
     }
 }
 export default Graph;
