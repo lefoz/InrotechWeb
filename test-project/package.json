@@ -8,6 +8,7 @@
     "react-dropdown": "^1.2.3",
     "react-popup": "^0.7.1",
     "react-router-dom": "^4.0.0",
+    "react-table-view": "^1.0.0",
     "superagent": "^3.5.2"
   },
   "devDependencies": {
