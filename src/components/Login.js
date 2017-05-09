@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
-import Routes_login from './Routing/Routes_login'
+import React, { Component } from 'react'
+import { Link, Route, Switch } from 'react-router-dom'
 
-import '../styles/Login-style.css';
-import logo from '../images/Inrotechlogo_White_Cyan.png';
+import Login_comp from './Login_comp'
+import RobotSelector_comp from './RobotSelector_comp'
+
+import '../styles/Login-style.css'
+import logo from '../images/Inrotechlogo_White_Cyan.png'
 
 
 class Login extends Component {
   render() {
-    console.log(this.props.route)
     return (
       <div className="background">
         <div className="wrapper">
@@ -17,7 +18,8 @@ class Login extends Component {
           </div>
         </div>
           <div className="divContent">
-            <Routes_login /> 
+            <Route exact path='/' component={Login_comp} /> 
+            <Route path='/robotselector' component={RobotSelector_comp} />
           </div>
         </div>
       </div>
