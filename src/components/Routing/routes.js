@@ -25,7 +25,10 @@ class Routes extends Component {
                         <Route path="/main" component={Main} />
                         <Route path="/graph" component={Graph} />
                         <Route path="/settings" component={Settings} />
-                        <Route path="/" component={Login} />
+                        <Route path="/" component={Login} >
+                            <Route path='/' component={Login_comp}/>
+                            <Route path='/robotSelector' component={RobotSelector}/>
+                        </Route>
                         <Route component={NotFound} />
                     </Switch>
             </Router>
