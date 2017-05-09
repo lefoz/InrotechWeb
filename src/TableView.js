@@ -125,7 +125,7 @@ var TableView = function (_Component) {
               this.state.fields.map(function (f, i) {
                 return _react2.default.createElement(
                   'th',
-                  { ley: i, onClick: _this2.sort.bind(_this2), 'data-field-name': f },
+                  { key: i, onClick: _this2.sort.bind(_this2), 'data-field-name': f },
                   _react2.default.createElement(
                     'span',
                     null,

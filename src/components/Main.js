@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    this.getValue();
+    // this.getValue();
   }
 
 //https://github.com/visionmedia/superagent/issues/270
@@ -48,9 +48,11 @@ class Main extends Component {
         </div>
         <div className="content-area">
         <div className="box-left">  
-        <div className="video-area">Video<Video /></div>
-        <div className="graph-area">graph</div>
-        <div className="task-area">taskmanager {this.state.value}</div>
+        <div className="video-area"><Video/>{/*<Video />*/}</div>
+        <div className="graph-area"><Graph/></div>
+        <div className="task-area">taskmanager 
+          {/*{this.state.value}*/}
+          </div>
         </div>
         <div className="box-right">
         <div className="index-area"><RegTable/></div>
