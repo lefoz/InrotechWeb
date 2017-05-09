@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
 import Request from 'superagent';
 import Video from './Video';
+import Graph from './Graph';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
+
 class Main extends Component {
 
   constructor() {
