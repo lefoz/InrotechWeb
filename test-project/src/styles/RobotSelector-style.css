@@ -27,6 +27,12 @@ textarea {
 .camIP{
   margin: 5px;
 }
+.camUserId{
+    margin: 5px;
+}
+.camPassword{
+    margin: 5px;
+}
 
 .background{
     background-image: url("../../public/mainBack.jpg");
