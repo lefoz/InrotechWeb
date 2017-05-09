@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
 import Request from 'superagent';
+import Video from './Video';
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 class Main extends Component {
+
   constructor() {
     super()
     this.state = {value:[]}
@@ -14,18 +16,19 @@ class Main extends Component {
     this.getValue();
   }
 
+//https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get("/api/values")
+    //Request.get("/api/values")
+    Request.get("/api/values/5")
     .withCredentials()
     .end((err, res) => {
-      this.setState({ value: res.body.now })
+      let _val = res.text;
+      this.setState({value: _val })
+      console.log('request ')
+      console.log(res.body)
     })
-    // fetch('api/values').then(result => {
-    //   let jsonObject = result.json();
-    //   console.log(result)
-    //   
-    // })
   }
+  
   render() {
 
     return (
@@ -33,19 +36,17 @@ class Main extends Component {
         <div className="top-menu">
         <div className="logo"><img src={logo} alt="" /></div>
         <div className="robot-info"><p>ROBOT INFO</p></div>
-        <Link to="/SignUp">
+        <Link to="settings">
             <input className="settings" type="submit" value="SETTINGS"/> 
         </Link>
          <Link to="/">
             <input className="logout" type="submit" value="NEW ROBOT"/> 
         </Link>
-        {/*<div className="settings"><h3>SETTINGS</h3></div>*/}
-       {/*}<div className="logout"><h3>NEW ROBOT</h3></div>*/}
         </div>
         <div className="content-area">
           {this.state.value}
         <div className="box-left">  
-        <div className="video-area">Video</div>
+        <div className="video-area">Video<Video /></div>
         <div className="graph-area">graph</div>
         <div className="task-area">taskmanager {this.state.value}</div>
         </div>

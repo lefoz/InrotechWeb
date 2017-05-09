@@ -260,7 +260,23 @@ function runDevServer(host, port, protocol) {
     },
     // Enable HTTPS if the HTTPS environment variable is set to 'true'
     https: protocol === "https",
+<<<<<<< HEAD
     host: host
+=======
+    host: host,
+    proxy: {
+      "/api/values": {
+        target: "http://localhost:53982",
+        changeOrigin: true,
+        secure: false
+      },
+      "/api/values/5": {
+        target: "http://localhost:53982",
+        changeOrigin: true,
+        secure: false
+      }
+    }
+>>>>>>> refs/remotes/origin/ole_working
   });
 
   // Our custom middleware proxies requests to /index.html or a remote API.
