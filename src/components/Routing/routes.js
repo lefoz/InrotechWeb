@@ -1,29 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Login from '../Login'
 import Settings from '../Settings'
 import Main from '../Main'
-import RobotSelector from '../RobotSelector'
+
+import Graph from '../Graph'
+import RobotSelector from '../RobotSelector_comp'
+import Login_comp from '../Login_comp'
+
 import NotFound from '../NotFound'
+
 
 import {
     BrowserRouter as Router,
     Route,
-    Switch
+    Switch,
+    DefaultRoute
 } from 'react-router-dom'
 
 class Routes extends Component {
     render() {
         return (
             <Router>
-                <div>
                     <Switch>
-                        <Route exact path="/" component={Login} />
                         <Route path="/main" component={Main} />
+                        <Route path="/graph" component={Graph} />
                         <Route path="/settings" component={Settings} />
-                        <Route path="/robotselector" component={RobotSelector} />
+                        <Route path="/" component={Login} />
                         <Route component={NotFound} />
                     </Switch>
-                </div>
             </Router>
         )
     }
