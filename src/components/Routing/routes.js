@@ -21,16 +21,18 @@ class Routes extends Component {
     render() {
         return (
             <Router>
+                <div>
                     <Switch>
-                        <Route path="/main" component={Main} />
+                        <Route exact path="/" component={Login} />
+                        <Route path="/Main" component={Main} />
                         <Route path="/graph" component={Graph} />
-                        <Route path="/settings" component={Settings} />
-                        <Route path="/" component={Login} >
-                            <Route path='/' component={Login_comp}/>
-                            <Route path='/robotSelector' component={RobotSelector}/>
-                        </Route>
+                        <Route path="/Settings" component={Settings} />
+                        <Route path="/RobotSelector" component={RobotSelector} />
                         <Route component={NotFound} />
                     </Switch>
+                    
+                    {this.props.children}
+                </div>
             </Router>
         )
     }
