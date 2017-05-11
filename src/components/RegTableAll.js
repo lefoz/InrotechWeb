@@ -7,7 +7,7 @@ import '../styles/RegTable-style.css'
 class RegTableAll extends Component {
   constructor() {
     super()
-    this.state = {RData:[{"id":"0","registry":"loading","name":"loading","value":"loading","selcted":"loading"}]}
+    this.state = {RData:[{"id":"0","registry":"loading","name":"loading",}]}
     this.getValue = this.getValue.bind(this)
   }
 

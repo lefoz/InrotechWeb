@@ -276,6 +276,11 @@ function runDevServer(host, port, protocol) {
         target: "http://localhost:53982",
         changeOrigin: true,
         secure: false
+      },
+      "/api/values/getarray/1": {
+        target: "http://localhost:53982",
+        changeOrigin: true,
+        secure: false
       }
     }
   });
