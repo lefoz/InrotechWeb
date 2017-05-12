@@ -4,10 +4,10 @@ import React, { Component, PropTypes } from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 
-class RegTable extends Component {
+class RegTableAll extends Component {
   constructor() {
     super()
-    this.state = {RData:[{"id":"0","registry":"loading","name":"loading","value":"loading"}]}
+    this.state = {RData:[{"id":"0","registry":"loading","name":"loading","value":"loading","selcted":"loading"}]}
     this.getValue = this.getValue.bind(this)
   }
 
@@ -17,11 +17,13 @@ class RegTable extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get("/api/values/2")
+    //Request.get("/api/values")
+    Request.get("/api/values/1")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
       this.setState({RData: res.body })
+      
       console.log('request ')
       
     })
@@ -36,4 +38,4 @@ class RegTable extends Component {
   }
 }
 
-export default RegTable
+export default RegTableAll
