@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import RegTableAll from './RegTableAll'
+import Checkbox from './CheckboxImp'
 import '../styles/Settings-style.css';
-
-//https://visionmedia.github.io/superagent/
-
-/*  request.post('/user')
-    .send({ name: 'tj', pet: 'tobi' })
-    .end(callback)*/
 
 class Settings extends Component {
   render() {
@@ -19,7 +14,8 @@ class Settings extends Component {
          
         </div>
           <div className="divContent">
-          <div><RegTableAll/></div>  
+          <div><RegTableAll/></div>
+          <div><Checkbox/></div>  
             <Link to="main">
             <input type="submit" value="SAVE SETTINGS"/> 
             </Link>
