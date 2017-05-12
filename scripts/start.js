@@ -218,7 +218,6 @@ function addMiddleware(devServer) {
   // It may be /index.html, so let the dev server try serving it again.
   devServer.use(devServer.middleware);
 }
-
 function runDevServer(host, port, protocol) {
   var devServer = new WebpackDevServer(compiler, {
     // Enable gzip compression of generated files.
@@ -287,6 +286,18 @@ function runDevServer(host, port, protocol) {
           changeOrigin: true,
           secure: false
       }
+
+
+
+
+
+
+
+
+
+
+
+      
     }
   });
 
