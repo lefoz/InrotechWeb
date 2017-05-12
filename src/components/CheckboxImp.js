@@ -4,43 +4,45 @@ import Request from 'superagent';
 
 
 
-const items = 
-[
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-];
+var items=[];
+// [
+//   '1',
+//   '2',
+//   '3',
+//   '4',
+//   '5',
+//   '6',
+//   '7',
+//   '8',
+// ];
 
 class CheckboxImp extends Component {
-//     constructor() {
-//     super()
-//     this.state = {info:[""]}
-//     this.getValue = this.getValue.bind(this)
-//   }
+    constructor(props) {
+    console.log('iam in');
+    super(props)
+    this.state = {items}
+    this.getValue = this.getValue.bind(this)
+  }
 
-//   componentDidMount() {
-//     this.getValue();
-//   }
-
-// //https://github.com/visionmedia/superagent/issues/270
-//   getValue() {
-//     Request.get("/api/values/getarray/1")
-//     .withCredentials()
-//     .end((err, res) => {
-//       console.log(res.body)
-//       this.setState({items: res.body })
-//       console.log('request ')
-      
-//     })
-//   }
-  componentWillMount = () => {
+  componentWillMount() {
+    this.getValue();
     this.selectedCheckboxes = new Set();
   }
+
+//https://github.com/visionmedia/superagent/issues/270
+  getValue() {
+    Request.get("/api/values/getarray/1")
+    .withCredentials()
+    .end((err, res) => {
+      console.log(res.body)
+      this.setState({items: res.body })
+      console.log('request ')
+      
+    })
+  }
+  //  componentWillMount = () => {
+   
+  // }
 
   toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
@@ -67,6 +69,7 @@ class CheckboxImp extends Component {
   )
 
   createCheckboxes = () => (
+    items = (this.state.items),
     items.map(this.createCheckbox)
   )
 
