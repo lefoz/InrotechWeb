@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+
 class Checkbox extends Component {
     state = {
         isChecked: false,
@@ -25,14 +26,14 @@ class Checkbox extends Component {
             <div className="checkbox">
                 <label>
                     <input
+                        className="cbStyle"
                         type="checkbox"
                         value={label}
                         checked={isChecked}
                         onChange={this.toggleCheckboxChange}
-                    />
+                        />
 
-                    {label}
-                </label>
+                  </label>
             </div>
         );
     }

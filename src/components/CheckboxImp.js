@@ -3,7 +3,6 @@ import Checkbox from './Checkbox.js';
 import Request from 'superagent';
 
 
-
 var items=[];
 // [
 //   '1',
@@ -77,9 +76,10 @@ class CheckboxImp extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xm-12">
+          <div className="col-sm-12">
 
             <form onSubmit={this.handleFormSubmit}>
+              
               {this.createCheckboxes()}
             </form>
 
