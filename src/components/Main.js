@@ -48,7 +48,7 @@ class Main extends Component {
         </div>
         <div className="content-area">
         <div className="box-left">  
-        <div className="video-area"><Video/></div>
+        <div className="video-area">need fixing</div>
         <div className="graph-area"><Graph/></div>
         <div className="task-area">taskmanager 
           {/*{this.state.value}*/}
