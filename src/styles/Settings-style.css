@@ -2,6 +2,31 @@ body{
     color: black;
     font: 14px arial, sans-serif;
  }
- .divContent{
-     align-content: flex-start;
- }
+ .wrapper {
+    position:relative;
+    width:100%;
+    margin: 0 auto;
+    top:50px;
+    
+}
+.divContent {
+    margin: 0 auto;
+    /*background-color:blue;*/
+    height: 50%; 
+    width:700px;
+    top: 25%;
+    bottom: 25%;
+    text-align: center; 
+    position: relative;
+}
+#reg{
+    width: 50%;
+    margin: 0 auto;
+    float: left;
+}
+#check{
+    padding-top: 50px;
+    width: 40%;
+    margin: 0 auto;
+    float: left;
+} 
