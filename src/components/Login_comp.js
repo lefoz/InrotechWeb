@@ -1,18 +1,54 @@
 import React, { PropTypes, Component } from 'react';
 import {Link } from 'react-router-dom';
 import '../styles/Login_comp-style.css';
+import Request from 'superagent';
+
 
 class Login_comp extends Component {
+ constructor() {
+    super()
+    this.state = {
+      user:{
+      name: "",
+      pass: ""
+    }
+  }
+    this.getValue = this.getValue.bind(this)
+  }
+
+  componentDidMount() {
+    //this.getValue();
+  }
+
+  
+  getValue(e) {
+    e.preventDefault();
+    //Request.get("/api/user")
+    //_user=window.btoa(_user+':'+_pswd);
+
+    const user_login = `${this.state.user.name.value}:${this.state.user.pass.value}`    
+    Request
+    .get("/api/user/"+user_login)
+    .set('Content-Type', 'application/json')
+    .end((err, res) => {
+      console.log('response = ')
+      console.log(res.text)
+
+    })
+    
+  }
+
   render() {
     return (
         <div className='login_comp'>
         <h2/>
         <h2/>
-            <input className="boxMargins" placeholder="Username" /><br />
-            <input className="boxMargins" placeholder="Password" type="password"/><br />
-            <Link to="robotselector">
-              <input type="submit" value="LOG IN"/> 
-            </Link>
+        <form onSubmit={(e)=>this.getValue(e)}>
+          <input ref={(input) => this.state.user.name = input} id="user_login" className="boxMargins" placeholder='username' type="text"/><br />
+          <input ref={(input) => this.state.user.pass = input} id='user_pswd' className="boxMargins" placeholder="Password" type="password"/><br />
+          
+          <button className="boxMargins" type="submit">Submit</button> 
+        </form>
         </div>
     );
   }
