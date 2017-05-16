@@ -20,13 +20,21 @@ body{
     position: relative;
 }
 #reg{
-    width: 50%;
+    text-align: center;
+    width: 70%;
     margin: 0 auto;
     float: left;
+    padding-bottom: 25px;
 }
 #check{
-    padding-top: 50px;
-    width: 40%;
+    padding-top: 48.8px;
+    width: 30%;
     margin: 0 auto;
     float: left;
-} 
+    padding-bottom: 25px;
+}
+.cbStyle{
+    height: 25px;
+    margin: 6.3px;
+    
+}

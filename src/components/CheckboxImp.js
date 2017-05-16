@@ -2,19 +2,9 @@ import React, { Component } from 'react';
 import Checkbox from './Checkbox.js';
 import Request from 'superagent';
 
-
-
+var selItems=[];
 var items=[];
-// [
-//   '1',
-//   '2',
-//   '3',
-//   '4',
-//   '5',
-//   '6',
-//   '7',
-//   '8',
-// ];
+
 
 class CheckboxImp extends Component {
     constructor(props) {
@@ -22,6 +12,7 @@ class CheckboxImp extends Component {
     super(props)
     this.state = {items}
     this.getValue = this.getValue.bind(this)
+
   }
 
   componentWillMount() {
@@ -37,11 +28,20 @@ class CheckboxImp extends Component {
       console.log(res.body)
       this.setState({items: res.body })
       console.log('request ')
-      
+
     })
   }
+  postValue(){
+    Request.post("/api/values")
+    .type('json')
+    .send({selItems})    
+    .end(function(err, res){})
+    //upload
+    console.log(selItems ,'Post complete')
+  ;}
+
   //  componentWillMount = () => {
-   
+
   // }
 
   toggleCheckbox = label => {
@@ -54,10 +54,13 @@ class CheckboxImp extends Component {
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-
+    
     for (const checkbox of this.selectedCheckboxes) {
-      console.log(checkbox, 'is selected.');
+      console.log(checkbox, ' is selected.');
+      selItems.push(checkbox);
     }
+
+    this.postValue();
   }
 
   createCheckbox = label => (
@@ -72,15 +75,17 @@ class CheckboxImp extends Component {
     items = (this.state.items),
     items.map(this.createCheckbox)
   )
+ 
 
   render() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xm-12">
+          <div className="col-sm-12">
 
             <form onSubmit={this.handleFormSubmit}>
-              {this.createCheckboxes()}
+            {this.createCheckboxes()}
+            <button className="btn btn-default" type="submit">Save</button>
             </form>
 
           </div>
