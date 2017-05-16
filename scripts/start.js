@@ -218,7 +218,6 @@ function addMiddleware(devServer) {
   // It may be /index.html, so let the dev server try serving it again.
   devServer.use(devServer.middleware);
 }
-
 function runDevServer(host, port, protocol) {
   var devServer = new WebpackDevServer(compiler, {
     // Enable gzip compression of generated files.
@@ -267,6 +266,7 @@ function runDevServer(host, port, protocol) {
         changeOrigin: true,
         secure: false
       },
+<<<<<<< HEAD
       "/api/values/1": {
         target: "http://localhost:53982",
         changeOrigin: true,
@@ -286,6 +286,12 @@ function runDevServer(host, port, protocol) {
         target: "http://localhost:53982",
         changeOrigin: true,
         secure: false
+=======
+      "/api/user": {
+          target: "http://localhost:53982",
+          changeOrigin: true,
+          secure: false
+>>>>>>> origin/master
       }
     }
   });
