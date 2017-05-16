@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import {Link, path } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../styles/Login_comp-style.css';
 import Request from 'superagent';
 
@@ -42,7 +42,7 @@ class Login_comp extends Component {
         <div className='login_comp'>
         <h2/>
         <h2/>
-        <form action='/' onSubmit={(e)=>this.getValue(e)}>
+        <form onSubmit={(e)=>this.getValue(e)}>
           <input ref={(input) => this.state.user.name = input} id="user_login" className="boxMargins" placeholder='username' type="text"/><br />
           <input ref={(input) => this.state.user.pass = input} id='user_pswd' className="boxMargins" placeholder="Password" type="password"/><br />
           <input className="boxMargins" type="submit"/> 
