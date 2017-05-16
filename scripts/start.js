@@ -281,6 +281,11 @@ function runDevServer(host, port, protocol) {
         target: "http://localhost:53982",
         changeOrigin: true,
         secure: false
+      },
+      "/api/values/": {
+        target: "http://localhost:53982",
+        changeOrigin: true,
+        secure: false
       }
     }
   });
