@@ -11,6 +11,7 @@ class Video extends Component {
     
   }
   
+  //to get picture swap src with src .... /picture
   render() {
     return (
        <div className='video_container'>
