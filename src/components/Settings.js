@@ -13,9 +13,6 @@ class Settings extends Component {
          <h3>PLEASE SELECT REGESTRIES TO BE SHOWN ON MAIN PAGE</h3>
           <div id="reg"><RegTableAll/></div>
           <div id="check"><Checkbox/></div>  
-          <Link to="main">
-          <input type="submit" value="SAVE SETTINGS"/> 
-           </Link>
           </div>
         </div>
       

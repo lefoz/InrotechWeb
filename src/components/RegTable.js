@@ -17,7 +17,7 @@ class RegTable extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get("/api/values/2")
+    Request.get( window.robotUrl+"2")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
