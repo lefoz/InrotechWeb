@@ -15,7 +15,7 @@ class Video extends Component {
   render() {
     return (
        <div className='video_container'>
-        <img src="http://admin:Inrotech@mrknowitall3.hopto.org/Streaming/Channels/1/preview" width="1073" height="603" />
+        <img src="http://mrknowitall3.hopto.org/Streaming/Channels/1/preview" width="1073" height="603" />
       </div>
     );
   }
