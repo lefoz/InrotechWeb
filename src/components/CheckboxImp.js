@@ -65,7 +65,7 @@ class CheckboxImp extends Component {
     }
 
     this.postValue();
-    location.href='/main';
+    location.pathname='/main';
   }
 
   createCheckbox = label => (
