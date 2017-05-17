@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 
+//var url= window.robotUrl;
 class RegTableAll extends Component {
   constructor() {
     super()
@@ -18,7 +19,7 @@ class RegTableAll extends Component {
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
     //Request.get("/api/values")
-    Request.get( window.robotUrl+"1")
+    Request.get(window.robotUrl+"1")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)

@@ -5,8 +5,10 @@ import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
 import RegTable from './RegTable.js'
-import logo from '../images/Inrotechlogo_White_Cyan.png';
+import 
+logo from '../images/Inrotechlogo_White_Cyan.png';
 
+var url= window.robotUrl;
 
 class Main extends Component {
 
@@ -23,7 +25,7 @@ class Main extends Component {
 
     //https://github.com/visionmedia/superagent/issues/270
     getValue() {
-            Request.get( window.robotUrl+"/5")
+            Request.get(url+"/5")
             .withCredentials()
             .end((err, res) => {
                 let _val = res.text;
