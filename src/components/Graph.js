@@ -11,7 +11,7 @@ class Graph extends Component {
 
   constructor() {
     super()
-    this.state = {value:[]}
+    this.state = { value: [] }
     this.getValue = this.getValue.bind(this)
   }
 
@@ -19,56 +19,59 @@ class Graph extends Component {
     this.getValue();
     //window.setInterval(() => this.forceUpdate(), 1500);
     setInterval(() => this.getValue(), 1000)
-    
+
   }
 
   getValue() {
     //Request.get("/api/values")
-    Request.get("/api/values")
-    .withCredentials()
-    .end((err, res) => {
-      //var _val1 = res.body.x
-      this.setState({ value: res.body.x 
+    Request.get(window.robotUrl)
+      .withCredentials()
+      .end((err, res) => {
+        //var _val1 = res.body.x
+        this.setState({
+          value: res.body.x
+        })
+        console.log('request ')
+        console.log(res.body.x)
       })
-      console.log('request ')
-      console.log(res.body.x)
-    })
   }
 
-render() {
-        var flow = {
-            duration: 50,
-           
-        };
-        
-        var chart =({
-            transition: {
-            duration: 0}
-      });
-      
-      
-        var data = {
-            xFormat: '%S',
-            date: new Date(),
-            Car: this.state.value}
-        var axis = {
-                x: {
-                    type: 'timeseries',
-                    tick: {
-                          format: '%S'
-                          }
-                    }
-        };
+  render() {
+    var flow = {
+      duration: 50,
 
-        return <section><RTChart
-        flow = { flow }
-        maxValues={20}
-        fields = {
-            ['Car']
-        }
-        
-        data = { data }
-        /></section>
+    };
+
+    var chart = ({
+      transition: {
+        duration: 0
+      }
+    });
+
+
+    var data = {
+      xFormat: '%S',
+      date: new Date(),
+      Car: this.state.value
     }
+    var axis = {
+      x: {
+        type: 'timeseries',
+        tick: {
+          format: '%S'
+        }
+      }
+    };
+
+    return <section><RTChart
+      flow={flow}
+      maxValues={20}
+      fields={
+        ['Car']
+      }
+
+      data={data}
+    /></section>
+  }
 }
 export default Graph;

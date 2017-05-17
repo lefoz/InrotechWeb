@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Checkbox from './Checkbox.js';
 import Request from 'superagent';
 
+
 var selItems=[];
 var items=[];
 
@@ -22,7 +23,7 @@ class CheckboxImp extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get("/api/values/getarray/1")
+    Request.get( window.robotUrl+"getarray/1")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
@@ -32,14 +33,17 @@ class CheckboxImp extends Component {
     })
   }
   postValue(){
-    Request.post("/api/values")
+    Request.post(window.robotUrl)
     .type('json')
-    .send({selItems})    
-    .end(function(err, res){})
+    .send(selItems)    
+    .end(function(err, res){
+      console.log(err, "error")
+    })
     //upload
     console.log(selItems ,'Post complete')
-  ;}
-
+   
+    ;}
+    
   //  componentWillMount = () => {
 
   // }
@@ -54,13 +58,14 @@ class CheckboxImp extends Component {
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    
+    selItems.length = 0;
     for (const checkbox of this.selectedCheckboxes) {
       console.log(checkbox, ' is selected.');
       selItems.push(checkbox);
     }
 
     this.postValue();
+    location.href='/main';
   }
 
   createCheckbox = label => (
