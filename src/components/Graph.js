@@ -7,12 +7,14 @@ import logo from '../images/Inrotechlogo_White_Cyan.png';
 import RTChart from 'react-rt-chart'
 import '../../node_modules/c3/c3.css'
 
+//var url=window.robotUrl;
 class Graph extends Component {
 
   constructor() {
     super()
     this.state = { value: [] }
     this.getValue = this.getValue.bind(this)
+    console.log(window.robotUrl)
   }
 
   componentDidMount() {

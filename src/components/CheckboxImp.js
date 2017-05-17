@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Checkbox from './Checkbox.js';
 import Request from 'superagent';
 
-
+//var url = window.robotUrl;
 var selItems=[];
 var items=[];
 
@@ -13,7 +13,7 @@ class CheckboxImp extends Component {
     super(props)
     this.state = {items}
     this.getValue = this.getValue.bind(this)
-
+    console.log(window.robotUrl)
   }
 
   componentWillMount() {
@@ -23,7 +23,7 @@ class CheckboxImp extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get( window.robotUrl+"getarray/1")
+    Request.get(window.robotUrl+"getarray/1")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
@@ -65,7 +65,7 @@ class CheckboxImp extends Component {
     }
 
     this.postValue();
-    location.href='/main';
+    // location.href='/main';
   }
 
   createCheckbox = label => (

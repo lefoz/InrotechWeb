@@ -5,7 +5,7 @@ import Dropdown from '../Dropdown.js'
 class SelectDropdown extends Component {
   constructor (props) {
     super(props)
-    window.robotUrl = "/api/values/";
+    //window.robotUrl ="/api/values/";
     this.state = {
       selected: { value: 'Selection', label: 'SELECT ROBOT'}
     }
@@ -14,7 +14,7 @@ class SelectDropdown extends Component {
 
   _onSelect (option) {
     console.log('You selected ', option.value)
-    window.robotUrl = option.value
+    window.robotUrl = option.value,
     this.setState({selected: option})
   }
 
