@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router,Link, Route, Switch } from 'react-router-dom'
 
+import Settings from './Settings'
+import Main from './Main'
+import RobotSelector from './RobotSelector'
+import NotFound from './NotFound'
 import '../styles/Login-style.css'
 import logo from '../images/Inrotechlogo_White_Cyan.png'
 
 import '../styles/Login_comp-style.css';
 import Request from 'superagent';
+
 
 
 class Login extends Component {
@@ -15,29 +20,8 @@ class Login extends Component {
       user:{
       name: "",
       pass: ""
-    }
-  }
-    this.getValue = this.getValue.bind(this)
-  }
-  
-  getValue(e) {
-    e.preventDefault();
-    const user_login = `${this.state.user.name.value}:${this.state.user.pass.value}`    
-    Request
-    .get("/api/user/"+user_login)
-    .set('Content-Type', 'application/json')
-    .end((err, res) => {
-      console.log('response = ')
-      console.log(res.body)
-      if (res.body) {
-        location.pathname = '/RobotSelector'
-      }
-    })
-    
-  }
-
-  render() {
-    return (
+    },
+    route:
       <div className="background">
         <div className="wrapper">
           <div className="menuStyle">
@@ -56,6 +40,40 @@ class Login extends Component {
         </div>
           </div>
         </div>
+      </div>
+  }
+    this.getValue = this.getValue.bind(this)
+  }
+  
+  getValue(e) {
+    e.preventDefault();
+    const user_login = `${this.state.user.name.value}:${this.state.user.pass.value}`    
+    Request
+    .get("/api/user/"+user_login)
+    .set('Content-Type', 'application/json')
+    .end((err, res) => {
+      console.log('response = ')
+      console.log(res.body)
+      if (res.body) {
+        this.setState({route:
+        <Router>
+          <Switch>
+            <Route exact path="/" component={RobotSelector} />
+            <Route path="/main" component={Main} />
+            <Route path="/settings" component={Settings} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      })
+      }
+    })
+    
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.route}
       </div>
     );
   }
