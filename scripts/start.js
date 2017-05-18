@@ -261,29 +261,12 @@ function runDevServer(host, port, protocol) {
     https: protocol === "https",
     host: host,
     proxy: {
+      "/api/values/getarray": {
+        target: "http://localhost:53982",
+        changeOrigin: true,
+        secure: false
+      },
       "/api/values": {
-        target: "http://localhost:53982",
-        changeOrigin: true,
-        secure: false
-      },
-
-
-      "/api/values/1": {
-        target: "http://localhost:53982",
-        changeOrigin: true,
-        secure: false
-      },
-      "/api/values/2": {
-        target: "http://localhost:53982",
-        changeOrigin: true,
-        secure: false
-      },
-      "/api/values/getarray/1": {
-        target: "http://localhost:53982",
-        changeOrigin: true,
-        secure: false
-      },
-      "/api/values/": {
         target: "http://localhost:53982",
         changeOrigin: true,
         secure: false
@@ -293,7 +276,6 @@ function runDevServer(host, port, protocol) {
           target: "http://localhost:53982",
           changeOrigin: true,
           secure: false
- 
       }
     }
   });
