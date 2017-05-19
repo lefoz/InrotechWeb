@@ -26,7 +26,7 @@ class Graph extends Component {
 
   getValue() {
     //Request.get("/api/values")
-    Request.get(window.robotUrl)
+    Request.get(window.sessionStorage.getItem('webUrl'))
       .withCredentials()
       .end((err, res) => {
         //var _val1 = res.body.x

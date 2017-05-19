@@ -8,7 +8,7 @@ import RegTable from './RegTable.js'
 import 
 logo from '../images/Inrotechlogo_White_Cyan.png';
 
-var url= window.robotUrl;
+
 
 class Main extends Component {
 
@@ -25,7 +25,7 @@ class Main extends Component {
 
     //https://github.com/visionmedia/superagent/issues/270
     getValue() {
-            Request.get(url+"/5")
+            Request.get(window.sessionStorage.getItem('webUrl')+"/5")
             .withCredentials()
             .end((err, res) => {
                 let _val = res.text;

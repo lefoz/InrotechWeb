@@ -23,7 +23,7 @@ class CheckboxImp extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get(window.robotUrl+"getarray/1")
+    Request.get(window.sessionStorage.getItem('webUrl')+"getarray/1")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
@@ -33,7 +33,7 @@ class CheckboxImp extends Component {
     })
   }
   postValue(){
-    Request.post(window.robotUrl)
+    Request.post(window.sessionStorage.getItem('webUrl'))
     .type('json')
     .send(selItems)    
     .end(function(err, res){

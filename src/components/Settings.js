@@ -4,9 +4,11 @@ import RegTableAll from './RegTableAll'
 import Checkbox from './CheckboxImp'
 import '../styles/Settings-style.css';
 
-var url=  window.robotUrl;
+
 class Settings extends Component {
+  
   render() {
+    console.log(window.sessionStorage.getItem('ip'));
     return (
       <div className="wrapper">
        <div className="divContent">
