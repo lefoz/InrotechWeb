@@ -62,15 +62,16 @@
 
 .box-right {
     display: flex;
-    width: 35%;
 }
 
 .video-area {
     /*Test af resize*/
-    width: 40%;
+    resize: both;
+    overflow: auto;
     /* */
-    background-color: rgba(132, 129, 128,0.5);
-    overflow: hidden;
+    min-width: 300px;
+    background-color: #800008;
+    max-width: 45%;
 }
 
 .video-area img {
@@ -78,21 +79,24 @@
 }
 
 .graph-area {
-    background-color: rgba(132, 129, 128,0.5);
-    width: 40%;
+    min-width: 300px;
+    width: 45%;
+    background-color: green;
+    max-width: 50%;
     max-height: 50%;
 }
 
 .index-area {
     width: 97%;
-    background-color: rgba(132, 129, 128,0.5);
+    background-color: purple;
 }
 
 .task-area {
-    display: inline-flex;   
-    background-color: rgba(132, 129, 128,0.5);
+    display: inline-flex;
+    min-height: 200px;
+    width: 100%;
+    background-color: yellow;
     flex-grow: 2;
-    margin: 15px;
 }
 
 .graph-area {
@@ -129,22 +133,18 @@
     display: flex;
     flex-grow: 1;
     flex-shrink: 1;
-    margin: 15px;
-    justify-content: space-between;
 }
 
 .box-left div {
-    
+    justify-content: space-between;
     min-height: 200px;
 }
 
 .box-left-top div {
     flex-grow: 1;
-    
 }
 .c3 svg {
     max-width: 100%;}
 .taskmanager {
-    
   width: 100%;
 }

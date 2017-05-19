@@ -14,9 +14,7 @@ class Video extends Component {
   //to get picture swap src with src .... /picture
   render() {
     return (
-       <div className='video_container'>
-        <img src="http://mrknowitall3.hopto.org/Streaming/Channels/1/preview" width="1073" height="603" />
-      </div>
+        <img src="http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0" />
     );
   }
 }
