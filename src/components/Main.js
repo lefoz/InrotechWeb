@@ -4,15 +4,10 @@ import '../styles/Main-style.css';
 import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
-<<<<<<< HEAD
-import RegTable from './RegTable'
 import Taskmanager from './Taskmanager'
-=======
 import RegTable from './RegTable.js'
 import RobotInfo from './RobotInfo'
->>>>>>> ebb3a81ab0825a4ae07966b316832470352c6d51
-import 
-logo from '../images/Inrotechlogo_White_Cyan.png';
+import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
 
