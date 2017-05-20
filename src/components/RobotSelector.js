@@ -26,8 +26,6 @@ class RobotSelector extends Component {
               <h3>OR CONNECT MANUALLY</h3>
               <input className="roboIP" placeholder="ROBOT IP"></input><br />
               <input className="camIP" placeholder="CAMERA IP"></input><br />
-              <input className="camUserId" placeholder="CAMERA USERNAME"></input><br />
-              <input className="camPassword" placeholder="CAMERA PASSWORD"></input><br />
               <Link to="/Main">
                 <input type="submit" value="CONNECT TO ROBOT" />
               </Link>
