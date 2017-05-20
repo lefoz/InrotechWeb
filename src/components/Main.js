@@ -4,8 +4,13 @@ import '../styles/Main-style.css';
 import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
+<<<<<<< HEAD
 import RegTable from './RegTable'
 import Taskmanager from './Taskmanager'
+=======
+import RegTable from './RegTable.js'
+import RobotInfo from './RobotInfo'
+>>>>>>> ebb3a81ab0825a4ae07966b316832470352c6d51
 import 
 logo from '../images/Inrotechlogo_White_Cyan.png';
 
@@ -42,7 +47,7 @@ class Main extends Component {
             <div className="main">
                 <div className="top-menu">
                     <div className="logo"> <img src={logo} alt="" /> </div>
-                    <div className="robot-info"> <p> ROBOT INFO </p></div >
+                    <div className="robot-info"><RobotInfo/> </div >
                     <Link to="settings" >
                         <input className="settings" type="submit" value="SETTINGS" />
                     </Link> <Link to="/RobotSelector" >
