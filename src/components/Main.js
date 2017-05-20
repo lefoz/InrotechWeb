@@ -4,7 +4,9 @@ import '../styles/Main-style.css';
 
 import Video from './Video';
 import Graph from './Graph';
+import Taskmanager from './Taskmanager'
 import RegTable from './RegTable.js'
+import RobotInfo from './RobotInfo'
 import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
@@ -23,7 +25,7 @@ class Main extends Component {
             <div className="main">
                 <div className="top-menu">
                     <div className="logo"> <img src={logo} alt="" /> </div>
-                    <div className="robot-info"> <p> ROBOT INFO </p></div >
+                    <div className="robot-info"><RobotInfo/> </div>
                     <Link to="settings" >
                         <input className="settings" type="submit" value="SETTINGS" />
                     </Link> <Link to="/RobotSelector" >
@@ -39,7 +41,7 @@ class Main extends Component {
                                 <Graph />
                             </div> </div>
                         <div className="task-area" >
-
+                            <Taskmanager />
                         </div>
                     </div>
                     <div className="box-right" >

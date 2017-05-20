@@ -27,7 +27,7 @@ class SelectDropdown extends Component {
       },
       {
        type: 'group', name: 'Simulation', items: [
-         { value: "/api/values/", label: 'Simulated Robot', videoIP: "http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0"},
+         { value: "/api/values/", label: 'Simulated Robot', videoIP: "http://46.22.26.25:81/cgi-bin/faststream.jpg?stream=half&fps=15&rand=COUNTER"},
         ]
       }
     ]
