@@ -7,7 +7,7 @@ class Taskmanager extends Component {
   constructor() {
     super()
     this.state = {}
-    this.state = {RData:[{"registry":"loading","name":"loading",}]}
+    this.state = {RData:[{"name":"loading","status":"loading","cpu":"Loading"}]}
 
     this.getValue = this.getValue.bind(this)
   }
