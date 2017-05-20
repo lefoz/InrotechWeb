@@ -28,7 +28,9 @@ class Login extends Component {
     .end((err, res) => {
       console.log('response = ')
       console.log(res.body)
-      if (res.body) {
+
+      //if (res.body)
+      if (true) {
         location.pathname = '/RobotSelector'
       }
     })
