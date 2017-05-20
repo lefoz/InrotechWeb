@@ -15,15 +15,10 @@ class RegTable extends Component {
     this.getValue();
   }
 
-//https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get(window.sessionStorage.getItem('webUrl')+"2")
-    .withCredentials()
+    Request.get( window.robotUrl+"2")
     .end((err, res) => {
-      console.log(res.body)
       this.setState({RData: res.body })
-      console.log('request ')
-      
     })
   }
 

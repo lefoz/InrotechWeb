@@ -5,8 +5,7 @@ import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
 import RegTable from './RegTable.js'
-import 
-logo from '../images/Inrotechlogo_White_Cyan.png';
+import logo from '../images/Inrotechlogo_White_Cyan.png';
 
 
 
@@ -16,23 +15,6 @@ class Main extends Component {
         super()
         this.robot = selectedRobot
         this.state = { value: [] }
-        this.getValue = this.getValue.bind(this)
-    }
-
-    componentDidMount() {
-        // this.getValue();
-    }
-
-    //https://github.com/visionmedia/superagent/issues/270
-    getValue() {
-            Request.get(window.sessionStorage.getItem('webUrl')+"/5")
-            .withCredentials()
-            .end((err, res) => {
-                let _val = res.text;
-                this.setState({ value: _val })
-                console.log('request ')
-                console.log(res.body)
-            })
     }
 
     render() {

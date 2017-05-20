@@ -16,16 +16,12 @@ class RegTableAll extends Component {
     this.getValue();
   }
 
-//https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    //Request.get("/api/values")
     Request.get(window.sessionStorage.getItem('webUrl')+"1")
     .withCredentials()
     .end((err, res) => {
-      console.log(res.body)
       this.setState({RData: res.body })
-      
-      console.log('request ')
+
       
     })
   }

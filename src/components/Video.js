@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Video-style.css';
+import source from '../images/false-2061132_1280.png'
 
 //https://wiki.videolan.org/Documentation:WebPlugin/
 
@@ -8,14 +9,18 @@ import '../styles/Video-style.css';
 class Video extends Component {
   constructor(){
     super()
-    
+    if (!window.sessionStorage.getItem('videoIP')==undefined) {
+      this.src=window.sessionStorage.getItem('videoIP')
+    } else {
+    this.src=source
+    }
   }
   
-  //to get picture swap src with src .... /picture
+  //to get picture swap src .../preview with src .... /picture
   render() {
     return (
        <div className='video_container'>
-        <img src="http://mrknowitall3.hopto.org/Streaming/Channels/1/preview" width="1073" height="603" />
+        <img src={this.src} />
       </div>
     );
   }
