@@ -6,9 +6,6 @@ import logo from '../images/Inrotechlogo_White_Cyan.png';
 import '../styles/Dropdown-style.css';
 
 class RobotSelector extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (

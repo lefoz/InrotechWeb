@@ -21,7 +21,7 @@ class Video extends Component {
   render() {
     return (
        <div className='video_container'>
-        <img src={this.src} />
+        <img src={this.src} alt="video unavailable"/>
       </div>
     );
   }

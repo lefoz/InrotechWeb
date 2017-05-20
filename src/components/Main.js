@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
-import Request from 'superagent';
+
 import Video from './Video';
 import Graph from './Graph';
 import RegTable from './RegTable.js'

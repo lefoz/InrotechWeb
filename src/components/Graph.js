@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
 import Request from 'superagent';
-import Video from './Video';
-import logo from '../images/Inrotechlogo_White_Cyan.png';
 import RTChart from 'react-rt-chart'
 import '../../node_modules/c3/c3.css'
 
@@ -36,11 +33,11 @@ class Graph extends Component {
 
     };
 
-    var chart = ({
-      transition: {
-        duration: 0
-      }
-    });
+    // var chart = ({
+    //   transition: {
+    //     duration: 0
+    //   }
+    // });
 
 
     var data = {
@@ -48,14 +45,14 @@ class Graph extends Component {
       date: new Date(),
       Car: this.state.value
     }
-    var axis = {
-      x: {
-        type: 'timeseries',
-        tick: {
-          format: '%S'
-        }
-      }
-    };
+    // var axis = {
+    //   x: {
+    //     type: 'timeseries',
+    //     tick: {
+    //       format: '%S'
+    //     }
+    //   }
+    // };
 
     return <section><RTChart
       flow={flow}

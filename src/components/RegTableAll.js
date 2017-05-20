@@ -1,6 +1,5 @@
 import TableView from 'react-table-view'
-import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component} from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 

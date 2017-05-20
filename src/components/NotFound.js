@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import '../styles/Login-style.css';
 export default class NotFound extends Component {
   render() {

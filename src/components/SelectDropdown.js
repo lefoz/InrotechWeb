@@ -33,7 +33,7 @@ class SelectDropdown extends Component {
     ]
 
     const defaultOption = this.state.selected
-    const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label 
+    //const placeHolderValue = typeof this.state.selected === 'string' ? this.state.selected : this.state.selected.label 
 
     return (
       <section>
