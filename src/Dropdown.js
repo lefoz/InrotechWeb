@@ -10,13 +10,17 @@ class Dropdown extends Component {
     this.state = {
       selected: props.value || {
         label: props.placeholder || DEFAULT_PLACEHOLDER_STRING,
-        value: ''
+        value: '',
+        videoIP:''
       },
       isOpen: false
     }
     this.mounted = true
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
     this.fireChangeEvent = this.fireChangeEvent.bind(this)
+     window.sessionStorage.setItem('videoIP', "http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0");
+     //"http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0"
+     //http://192.168.1.64/Streaming/Channels/1/preview
   }
 
   componentWillReceiveProps (newProps) {

@@ -1,12 +1,18 @@
 body{
     color: black;
     font: 14px arial, sans-serif;
+    background-image: url("../images/Inrotech_www_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
  }
  .wrapper {
     position:relative;
     width:100%;
     margin: 0 auto;
     top:50px;
+    
     
 }
 .divContent {

@@ -9,7 +9,7 @@ import source from '../images/false-2061132_1280.png'
 class Video extends Component {
   constructor(){
     super()
-    if (!window.sessionStorage.getItem('videoIP')==undefined) {
+    if (window.sessionStorage.getItem('videoIP')) {
       this.src=window.sessionStorage.getItem('videoIP')
     } else {
     this.src=source
