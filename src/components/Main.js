@@ -4,7 +4,8 @@ import '../styles/Main-style.css';
 import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
-import RegTable from './RegTable.js'
+import RegTable from './RegTable'
+import Taskmanager from './Taskmanager'
 import 
 logo from '../images/Inrotechlogo_White_Cyan.png';
 
@@ -57,7 +58,7 @@ class Main extends Component {
                                 <Graph />
                             </div> </div>
                         <div className="task-area" >
-
+                            <Taskmanager />
                         </div>
                     </div>
                     <div className="box-right" >

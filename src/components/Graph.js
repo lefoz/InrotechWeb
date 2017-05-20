@@ -9,14 +9,12 @@ import '../../node_modules/c3/c3.css'
 
 //var url=window.robotUrl;
 class Graph extends Component {
-
   constructor() {
     super()
     this.state = { value: [] }
     this.getValue = this.getValue.bind(this)
     console.log(window.robotUrl)
   }
-
   componentDidMount() {
     this.getValue();
     //window.setInterval(() => this.forceUpdate(), 1500);
@@ -31,14 +29,16 @@ class Graph extends Component {
       .end((err, res) => {
         //var _val1 = res.body.x
         this.setState({
-          value: res.body.x
+          volt_value: res.body.volt,
+          amp_value: res.body.amp,
+          date: res.body.date
         })
         console.log('request ')
-        console.log(res.body.x)
+        console.log(res.body.volt)
       })
   }
-
-  render() {
+ 
+ render() {
     var flow = {
       duration: 50,
 
@@ -54,7 +54,8 @@ class Graph extends Component {
     var data = {
       xFormat: '%S',
       date: new Date(),
-      Car: this.state.value
+      Volt: this.state.volt_value,
+      Amp: this.state.amp_value
     }
     var axis = {
       x: {
@@ -67,9 +68,9 @@ class Graph extends Component {
 
     return <section><RTChart
       flow={flow}
-      maxValues={20}
+      maxValues={10}
       fields={
-        ['Car']
+        ['Volt','Amp']
       }
 
       data={data}
