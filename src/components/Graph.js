@@ -7,7 +7,7 @@ import '../../node_modules/c3/c3.css'
 class Graph extends Component {
   constructor() {
     super()
-    this.state = { value: [] }
+    this.state = { volt_value: [], amp_value:[] }
     this.getValue = this.getValue.bind(this)
   }
   componentDidMount() {
@@ -20,8 +20,7 @@ class Graph extends Component {
       .end((err, res) => {
         this.setState({
           volt_value: res.body.volt,
-          amp_value: res.body.amp,
-          date: res.body.date
+          amp_value: res.body.amp
         })
 
       })
