@@ -17,17 +17,28 @@ class Login extends Component {
     }
   }
     this.getValue = this.getValue.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(propertyName, event) {
+    event.preventDefault();
+    const user = this.state.user;
+    user[propertyName] = event.target.value;
+    this.setState({ user: user });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    var userid = `${this.state.user.name}:${this.state.user.pass}`
+    this.getValue(userid)
   }
   
-  getValue(e) {
-    e.preventDefault();
-    const user_login = `${this.state.user.name.value}:${this.state.user.pass.value}`    
+  getValue(userid) {  
     Request
-    .get("/api/user/"+user_login)
+    .get("/api/user/"+userid)
     .set('Content-Type', 'application/json')
     .end((err, res) => {
-      console.log('response = ')
-      console.log(res.body)
 
       //if (res.body)
       if (true) {
@@ -49,9 +60,9 @@ class Login extends Component {
             <div className='login_comp'>
         <h2/>
         <h2/>
-        <form onSubmit={(e)=>this.getValue(e)}>
-          <input ref={(input) => this.state.user.name = input} id="user_login" className="boxMargins" placeholder='username' type="text"/><br />
-          <input ref={(input) => this.state.user.pass = input} id='user_pswd' className="boxMargins" placeholder="Password" type="password"/><br />
+       <form onSubmit={this.handleSubmit}>
+          <input value={this.state.user.name} onChange={this.handleChange.bind(this, 'name')} id="user_login" className="boxMargins" placeholder='username' type="text"/><br />
+          <input value={this.state.user.pass} onChange={this.handleChange.bind(this, 'pass')} id='user_pswd' className="boxMargins" placeholder="Password" type="password"/><br />
           <input className="boxMargins" type="submit"/> 
         </form>
         </div>
