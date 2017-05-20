@@ -77,8 +77,8 @@ class CheckboxImp extends Component {
   )
 
   createCheckboxes = () => (
-    items = [(this.state.items),
-    items.map(this.createCheckbox)]
+    items = (this.state.items),
+    items.map(this.createCheckbox)
   )
  
 
