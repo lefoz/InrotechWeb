@@ -1,6 +1,5 @@
 import TableView from 'react-table-view'
-import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component} from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 
@@ -15,15 +14,10 @@ class RegTable extends Component {
     this.getValue();
   }
 
-//https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get(window.sessionStorage.getItem('webUrl')+"2")
-    .withCredentials()
+    Request.get( window.robotUrl+"2")
     .end((err, res) => {
-      console.log(res.body)
       this.setState({RData: res.body })
-      console.log('request ')
-      
     })
   }
 

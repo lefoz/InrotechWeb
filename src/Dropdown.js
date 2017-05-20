@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
+
 const DEFAULT_PLACEHOLDER_STRING = 'Select...'
 
 class Dropdown extends Component {
@@ -53,11 +54,12 @@ class Dropdown extends Component {
     }
   }
 
-  setValue (value, label) {
+  setValue (value, label, videoIP) {
     let newState = {
       selected: {
         value,
-        label
+        label,
+        videoIP
       },
       isOpen: false
     }
@@ -79,13 +81,14 @@ class Dropdown extends Component {
 
     let value = option.value || option.label || option
     let label = option.label || option.value || option
+    let videoIP = option.videoIP || option.videoIP || option
 
     return (
       <div
         key={value}
         className={optionClass}
-        onMouseDown={this.setValue.bind(this, value, label)}
-        onClick={this.setValue.bind(this, value, label)}>
+        onMouseDown={this.setValue.bind(this, value, label, videoIP)}
+        onClick={this.setValue.bind(this, value, label, videoIP)}>
         {label}
       </div>
     )

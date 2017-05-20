@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
 
 import '../styles/Login-style.css'
 import logo from '../images/Inrotechlogo_White_Cyan.png'

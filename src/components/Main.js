@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Main-style.css';
-import Request from 'superagent';
+
 import Video from './Video';
 import Graph from './Graph';
 import Taskmanager from './Taskmanager'
@@ -17,23 +17,6 @@ class Main extends Component {
         super()
         this.robot = selectedRobot
         this.state = { value: [] }
-        this.getValue = this.getValue.bind(this)
-    }
-
-    componentDidMount() {
-        // this.getValue();
-    }
-
-    //https://github.com/visionmedia/superagent/issues/270
-    getValue() {
-            Request.get(window.sessionStorage.getItem('webUrl')+"/5")
-            .withCredentials()
-            .end((err, res) => {
-                let _val = res.text;
-                this.setState({ value: _val })
-                console.log('request ')
-                console.log(res.body)
-            })
     }
 
     render() {
@@ -42,7 +25,7 @@ class Main extends Component {
             <div className="main">
                 <div className="top-menu">
                     <div className="logo"> <img src={logo} alt="" /> </div>
-                    <div className="robot-info"><RobotInfo/> </div >
+                    <div className="robot-info"><RobotInfo/> </div>
                     <Link to="settings" >
                         <input className="settings" type="submit" value="SETTINGS" />
                     </Link> <Link to="/RobotSelector" >
