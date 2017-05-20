@@ -11,13 +11,18 @@ class RegTable extends Component {
   }
 
   componentDidMount() {
-    this.getValue();
+   setInterval(() => this.getValue(), 5000);
   }
 
+//https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get( window.robotUrl+"2")
+    Request.get(window.sessionStorage.getItem('webUrl')+"2")
+    .withCredentials()
     .end((err, res) => {
+      console.log(res.body)
       this.setState({RData: res.body })
+      console.log('request ')
+      
     })
   }
 
