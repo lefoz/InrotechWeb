@@ -5,6 +5,7 @@ import Request from 'superagent';
 import Video from './Video';
 import Graph from './Graph';
 import RegTable from './RegTable.js'
+import RobotInfo from './RobotInfo'
 import 
 logo from '../images/Inrotechlogo_White_Cyan.png';
 
@@ -41,7 +42,7 @@ class Main extends Component {
             <div className="main">
                 <div className="top-menu">
                     <div className="logo"> <img src={logo} alt="" /> </div>
-                    <div className="robot-info"> <p> ROBOT INFO </p></div >
+                    <div className="robot-info"><RobotInfo/> </div >
                     <Link to="settings" >
                         <input className="settings" type="submit" value="SETTINGS" />
                     </Link> <Link to="/RobotSelector" >
