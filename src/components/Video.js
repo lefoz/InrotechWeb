@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Video-style.css';
 import source from '../images/false-2061132_1280.png'
 
+
 //https://wiki.videolan.org/Documentation:WebPlugin/
 
 //https://github.com/Streamedian/html5_rtsp_player/wiki/HTML5-RTSP-Player
@@ -12,7 +13,7 @@ class Video extends Component {
     if (window.sessionStorage.getItem('videoIP')) {
       this.src=window.sessionStorage.getItem('videoIP')
     } else {
-    this.src=source
+      this.src=source
     }
   }
   

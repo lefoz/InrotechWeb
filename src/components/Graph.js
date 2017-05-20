@@ -7,25 +7,19 @@ import logo from '../images/Inrotechlogo_White_Cyan.png';
 import RTChart from 'react-rt-chart'
 import '../../node_modules/c3/c3.css'
 
-//var url=window.robotUrl;
 class Graph extends Component {
 
   constructor() {
     super()
     this.state = { value: [] }
     this.getValue = this.getValue.bind(this)
-    console.log(window.robotUrl)
   }
 
   componentDidMount() {
-    this.getValue();
-    //window.setInterval(() => this.forceUpdate(), 1500);
     setInterval(() => this.getValue(), 1000)
-
   }
 
   getValue() {
-    //Request.get("/api/values")
     Request.get(window.sessionStorage.getItem('webUrl'))
       .withCredentials()
       .end((err, res) => {
@@ -33,8 +27,6 @@ class Graph extends Component {
         this.setState({
           value: res.body.x
         })
-        console.log('request ')
-        console.log(res.body.x)
       })
   }
 

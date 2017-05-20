@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
+
 const DEFAULT_PLACEHOLDER_STRING = 'Select...'
 
 class Dropdown extends Component {
@@ -10,17 +11,13 @@ class Dropdown extends Component {
     this.state = {
       selected: props.value || {
         label: props.placeholder || DEFAULT_PLACEHOLDER_STRING,
-        value: '',
-        videoIP:''
+        value: ''
       },
       isOpen: false
     }
     this.mounted = true
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
     this.fireChangeEvent = this.fireChangeEvent.bind(this)
-     window.sessionStorage.setItem('videoIP', "http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0");
-     //"http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0"
-     //http://192.168.1.64/Streaming/Channels/1/preview
   }
 
   componentWillReceiveProps (newProps) {
@@ -57,11 +54,12 @@ class Dropdown extends Component {
     }
   }
 
-  setValue (value, label) {
+  setValue (value, label, videoIP) {
     let newState = {
       selected: {
         value,
-        label
+        label,
+        videoIP
       },
       isOpen: false
     }
@@ -83,13 +81,14 @@ class Dropdown extends Component {
 
     let value = option.value || option.label || option
     let label = option.label || option.value || option
+    let videoIP = option.videoIP || option.videoIP || option
 
     return (
       <div
         key={value}
         className={optionClass}
-        onMouseDown={this.setValue.bind(this, value, label)}
-        onClick={this.setValue.bind(this, value, label)}>
+        onMouseDown={this.setValue.bind(this, value, label, videoIP)}
+        onClick={this.setValue.bind(this, value, label, videoIP)}>
         {label}
       </div>
     )
