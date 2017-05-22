@@ -11,8 +11,8 @@ class RobotSelector extends Component {
     super()
     this.state = {
       robot: {
-        ip: "192.168.117.40",
-        ipcam: "192.168.1.64"
+        ip: '',
+        ipcam: ''
       }
     }
     this.getValue = this.getValue.bind(this)
