@@ -7,12 +7,13 @@ import '../styles/Dropdown-style.css';
 import Request from 'superagent';
 
 class RobotSelector extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={robot:{
-      ip:'',
-      ipcam:''
-    }
+    this.state = {
+      robot: {
+        ip: '',
+        ipcam: ''
+      }
     }
     this.getValue = this.getValue.bind(this)
     this.handleChange = this.handleChange.bind(this);
@@ -31,29 +32,31 @@ class RobotSelector extends Component {
     let robot = `${this.state.robot.ip}`
     this.getValue(robot)
   }
-  
-  getValue(robot) {  
+
+  getValue(robot) {
     Request
-    .get("/api/robot/setrobot/"+robot)
-    .set('Content-Type', 'application/json')
-    .end((err, res) => {
-      console.log("robot info "+res.text)
-      window.sessionStorage('weburi',"api/robot")
-      //location.pathname='/main'
-    })
-    
+      .get("/api/robot/setrobot/" + robot)
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        console.log("robot info " + res.body)
+        console.log("robot info " + err.body)
+        window.sessionStorage.setItem('webUrl', "api/robot")
+        window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
+        //location.pathname='/main'
+      })
+
   }
 
   render() {
     return (
       <div className="background">
         <div className="wrapper">
-            <div className="logo-front"><img src={logo} alt="" /></div>
+          <div className="logo-front"><img src={logo} alt="" /></div>
           <div>
             <div className="divContent">
-              <Dropdown/>
+              <Dropdown />
               <Link to="/Main">
-                <input type="submit" value="CONNECT"/>
+                <input type="submit" value="CONNECT" />
               </Link>
               <h3>OR CONNECT MANUALLY</h3>
               <form onSubmit={this.handleSubmit}>
