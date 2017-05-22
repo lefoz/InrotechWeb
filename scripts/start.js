@@ -276,12 +276,17 @@ function runDevServer(host, port, protocol) {
           changeOrigin: true,
           secure: false
       },
+      "/api/robot/setrobot": {
+          target: "http://localhost:53982",
+          changeOrigin: true,
+          secure: false
+      },
       "/api/robot": {
           target: "http://localhost:53982",
           changeOrigin: true,
           secure: false
       },
-      "/api/taskmanager": {
+      "/api/robot/getarray": {
           target: "http://localhost:53982",
           changeOrigin: true,
           secure: false

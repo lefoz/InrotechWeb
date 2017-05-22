@@ -34,12 +34,12 @@ class RobotSelector extends Component {
   
   getValue(robot) {  
     Request
-    .get("/api/robot/"+robot)
+    .get("/api/robot/setrobot/"+robot)
     .set('Content-Type', 'application/json')
     .end((err, res) => {
-      console.log(res.text)
+      console.log("robot info "+res.text)
       window.sessionStorage('weburi',"api/robot")
-      location.pathname='/main'
+      //location.pathname='/main'
     })
     
   }
