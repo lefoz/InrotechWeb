@@ -18,7 +18,7 @@ class Taskmanager extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get("/api/taskmanager")
+    Request.get(window.sessionStorage.getItem('webUrl')+"taskmanager/")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)
