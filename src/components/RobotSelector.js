@@ -11,8 +11,8 @@ class RobotSelector extends Component {
     super()
     this.state = {
       robot: {
-        ip: '',
-        ipcam: ''
+        ip: "192.168.117.40",
+        ipcam: "192.168.1.64"
       }
     }
     this.getValue = this.getValue.bind(this)
@@ -38,11 +38,15 @@ class RobotSelector extends Component {
       .get("/api/robot/setrobot/" + robot)
       .set('Content-Type', 'application/json')
       .end((err, res) => {
-        console.log("robot info " + res.body)
-        console.log("robot info " + err.body)
+        console.log("robot connection " + res.body)
+        if (res.body) {
         window.sessionStorage.setItem('webUrl', "api/robot")
         window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
-        //location.pathname='/main'
+        location.pathname='/main'
+          
+        } else {
+          
+        }
       })
 
   }
@@ -55,9 +59,9 @@ class RobotSelector extends Component {
           <div>
             <div className="divContent">
               <Dropdown />
-              <Link to="/Main">
+              <form onSubmit={this.handleSubmit}>
                 <input type="submit" value="CONNECT" />
-              </Link>
+               </form>
               <h3>OR CONNECT MANUALLY</h3>
               <form onSubmit={this.handleSubmit}>
                 <input value={this.state.robot.ip} onChange={this.handleChange.bind(this, 'ip')} className="roboIP" placeholder="ROBOT IP" /><br />
