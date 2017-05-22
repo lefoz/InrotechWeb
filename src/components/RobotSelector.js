@@ -28,7 +28,7 @@ class RobotSelector extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let robot = `${this.state.robot.ip}:${this.state.robot.ipcam}`
+    let robot = `${this.state.robot.ip}`
     this.getValue(robot)
   }
   
