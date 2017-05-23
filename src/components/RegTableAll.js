@@ -16,7 +16,7 @@ class RegTableAll extends Component {
   }
 
   getValue() {
-    Request.get(window.sessionStorage.getItem('webUrl')+"1")
+    Request.get(window.sessionStorage.getItem('webUrl')+"/getarray/1")
     .withCredentials()
     .end((err, res) => {
       this.setState({RData: res.body })

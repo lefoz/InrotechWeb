@@ -40,7 +40,7 @@ class RobotSelector extends Component {
       .end((err, res) => {
         console.log("robot connection " + res.body)
         if (res.body) {
-        window.sessionStorage.setItem('webUrl', "api/robot")
+        window.sessionStorage.setItem('webUrl', "/api/robot")
         window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
         location.pathname='/main'
           
