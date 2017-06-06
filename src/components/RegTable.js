@@ -16,7 +16,7 @@ class RegTable extends Component {
 
 //https://github.com/visionmedia/superagent/issues/270
   getValue() {
-    Request.get(window.sessionStorage.getItem('webUrl')+"2")
+    Request.get(window.sessionStorage.getItem('webUrl')+"/2")
     .withCredentials()
     .end((err, res) => {
       console.log(res.body)

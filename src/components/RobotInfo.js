@@ -12,7 +12,7 @@ class RobotInfo extends Component {
      this.getValue();
     }
      getValue() {
-     Request.get(window.sessionStorage.getItem('webUrl')+"getarray/2")
+     Request.get(window.sessionStorage.getItem('webUrl')+"/getarray/2")
      .withCredentials()
      .end((err, res) => {
        console.log(res.body)
