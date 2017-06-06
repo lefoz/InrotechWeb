@@ -18,6 +18,7 @@ class RobotSelector extends Component {
     this.getValue = this.getValue.bind(this)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSimulation = this.handleSimulation.bind(this);
   }
 
   handleChange(propertyName, event) {
@@ -27,8 +28,14 @@ class RobotSelector extends Component {
     this.setState({ robot: robot });
   }
 
+  handleSimulation(event){
+    event.preventDefault();
+    location.pathname='/main'
+  }
+
   handleSubmit(event) {
     event.preventDefault();
+    console.log(event.target)
     let robot = `${this.state.robot.ip}`
     this.getValue(robot)
   }
@@ -38,9 +45,8 @@ class RobotSelector extends Component {
       .get("/api/robot/setrobot/" + robot)
       .set('Content-Type', 'application/json')
       .end((err, res) => {
-        console.log("robot connection " + res.body)
         if (res.body) {
-        window.sessionStorage.setItem('webUrl', "api/robot")
+        window.sessionStorage.setItem('webUrl', "/api/robot")
         window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
         location.pathname='/main'
           
@@ -59,7 +65,7 @@ class RobotSelector extends Component {
           <div>
             <div className="divContent">
               <Dropdown />
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSimulation}>
                 <input type="submit" value="CONNECT" />
                </form>
               <h3>OR CONNECT MANUALLY</h3>
