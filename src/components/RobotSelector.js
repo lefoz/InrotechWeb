@@ -30,7 +30,14 @@ class RobotSelector extends Component {
 
   handleSimulation(event){
     event.preventDefault();
-    location.pathname='/main'
+    if (window.sessionStorage.getItem('value')==="/api/values/") {
+    this.setState({ robot: {ip:window.sessionStorage.getItem('webUrl'), ipcam:window.sessionStorage.getItem('videoIP')}});
+    let robot = `${this.state.robot.ip}`
+    this.getValue(robot)
+      
+    } else {
+       location.pathname='/main';
+    }
   }
 
   handleSubmit(event) {
@@ -46,15 +53,11 @@ class RobotSelector extends Component {
       .set('Content-Type', 'application/json')
       .end((err, res) => {
         if (res.body) {
-        window.sessionStorage.setItem('webUrl', "/api/robot")
+        window.sessionStorage.setItem('webUrl', "/api/robot");
         window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
-        location.pathname='/main'
-          
-        } else {
-          
+        location.pathname='/main';
         }
       })
-
   }
 
   render() {
