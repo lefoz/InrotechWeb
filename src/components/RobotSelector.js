@@ -30,8 +30,8 @@ class RobotSelector extends Component {
 
   handleSimulation(event){
     event.preventDefault();
-    if (window.sessionStorage.getItem('value')==="/api/values/") {
-    this.setState({ robot: {ip:window.sessionStorage.getItem('webUrl'), ipcam:window.sessionStorage.getItem('videoIP')}});
+    if (window.sessionStorage.getItem('webUrl')==='/api/robot/') {
+    this.setState({ robot: {ip:window.sessionStorage.getItem('ip'), ipcam:window.sessionStorage.getItem('videoIP')}});
     let robot = `${this.state.robot.ip}`
     this.getValue(robot)
       

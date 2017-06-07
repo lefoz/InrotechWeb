@@ -15,6 +15,8 @@ class SelectDropdown extends Component {
   _onSelect (option) {
     window.sessionStorage.setItem('webUrl', option.value);
     window.sessionStorage.setItem('videoIP', option.videoIP);
+    window.sessionStorage.setItem('ip', option.ip);
+    console.log(option.value)
     this.setState({selected: option})
   }
 
@@ -22,12 +24,12 @@ class SelectDropdown extends Component {
     const options = [
       {
        type: 'group', name: 'Project', items: [
-         { value: "/api/robot/", label: 'Project Robot', videoIP: "http://192.168.1.64/Streaming/Channels/1/preview" },
+         { value: "/api/robot/", label: 'Project Robot', videoIP: "http://192.168.1.64/Streaming/Channels/1/preview", ip:"192.168.117.40" },
         ]
       },
       {
        type: 'group', name: 'Simulation', items: [
-         { value: "/api/values/", label: 'Simulated Robot', videoIP: "http://46.22.26.25:81/cgi-bin/faststream.jpg?stream=half&fps=15&rand=COUNTER"},
+         { value: "/api/values/", label: 'Simulated Robot', videoIP: "http://46.22.26.25:81/cgi-bin/faststream.jpg?stream=half&fps=15&rand=COUNTER", ip:"null"},
         ]
       }
     ]

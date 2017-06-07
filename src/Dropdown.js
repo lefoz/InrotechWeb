@@ -54,12 +54,13 @@ class Dropdown extends Component {
     }
   }
 
-  setValue (value, label, videoIP) {
+  setValue (value, label, videoIP, ip) {
     let newState = {
       selected: {
         value,
         label,
-        videoIP
+        videoIP,
+        ip
       },
       isOpen: false
     }
@@ -82,13 +83,14 @@ class Dropdown extends Component {
     let value = option.value || option.label || option
     let label = option.label || option.value || option
     let videoIP = option.videoIP || option.videoIP || option
+    let ip = option.ip || option.ip || option
 
     return (
       <div
         key={value}
         className={optionClass}
-        onMouseDown={this.setValue.bind(this, value, label, videoIP)}
-        onClick={this.setValue.bind(this, value, label, videoIP)}>
+        onMouseDown={this.setValue.bind(this, value, label, videoIP, ip)}
+        onClick={this.setValue.bind(this, value, label, videoIP, ip)}>
         {label}
       </div>
     )
