@@ -1,5 +1,5 @@
 import TableView from 'react-table-view'
-import React, { Component} from 'react'
+import React, { Component, PropTypes} from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 
@@ -11,7 +11,7 @@ class RegTable extends Component {
   }
 
   componentDidMount() {
-   setInterval(() => this.getValue(), 5000);
+   setInterval(() => this.getValue(), 3000);
   }
 
 //https://github.com/visionmedia/superagent/issues/270

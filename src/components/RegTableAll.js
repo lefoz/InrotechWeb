@@ -1,5 +1,5 @@
 import TableView from 'react-table-view'
-import React, { Component} from 'react'
+import React, { Component, PropTypes} from 'react'
 import Request from 'superagent';
 import '../styles/RegTable-style.css'
 
@@ -16,7 +16,7 @@ class RegTableAll extends Component {
   }
 
   getValue() {
-    Request.get(window.sessionStorage.getItem('webUrl')+"/getarray/1")
+    Request.get(window.sessionStorage.getItem('webUrl')+"/1")
     .withCredentials()
     .end((err, res) => {
       this.setState({RData: res.body })
