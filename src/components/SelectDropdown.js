@@ -24,7 +24,7 @@ class SelectDropdown extends Component {
     const options = [
       {
        type: 'group', name: 'Project', items: [
-         { value: "/api/robot/", label: 'Project Robot', videoIP: "http://192.168.1.64/Streaming/Channels/1/preview", ip:"192.168.117.40" },
+         { value: "/api/robot/", label: 'Project Robot', videoIP: "192.168.1.64", ip:"192.168.117.40" },
         ]
       },
       {

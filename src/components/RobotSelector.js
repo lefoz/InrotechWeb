@@ -35,7 +35,7 @@ class RobotSelector extends Component {
     let robot = `${this.state.robot.ip}`
     this.getValue(robot)
       
-    } else {
+  } else {
        location.pathname='/main';
     }
   }
@@ -52,9 +52,9 @@ class RobotSelector extends Component {
       .get("/api/robot/setrobot/" + robot)
       .set('Content-Type', 'application/json')
       .end((err, res) => {
-        if (res.body) {
+        if (res.body||window.sessionStorage.getItem('webUrl')==='/api/robot/') {
         window.sessionStorage.setItem('webUrl', "/api/robot");
-        window.sessionStorage.setItem('videoIP', this.state.robot.ipcam);
+        window.sessionStorage.setItem('videoIP', "http://"+this.state.robot.ipcam+"/Streaming/Channels/1/preview");
         location.pathname='/main';
         }
       })
